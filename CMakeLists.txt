@@ -196,6 +196,26 @@ target_link_libraries(px4_realsense_bridge_node
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 
+
+# Install nodelet library
+install(TARGETS px4_realsense_bridge_node ${PROJECT_NAME}
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+# Install header files
+install(DIRECTORY include/PX4_realsense_bridge
+    DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+    )
+
+# Install resource files
+install(DIRECTORY resource/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/resource
+)
+
+
+
 #############
 ## Testing ##
 #############
